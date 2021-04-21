@@ -3,7 +3,7 @@
 I got really bored/tired of rolling all the stat blocks I need for Out of the Abyss, so I made this tool to roll mobs of stats for me at once.
 
 ## installation
-You can either run `node stateparse.js` from inside the repo folder, or run `install.sh` to make statparse available globally. The latter may require sudo depending on your environment. After installation statparse is then available anywhere by running `statparse "inputstring"`.
+You can either run `node statparse.js` from inside the repo folder, or run `install.sh` to make statparse available globally. The latter may require sudo depending on your environment. After installation statparse is then available anywhere by running `statparse "inputstring"`.
 
 ## syntax
 
@@ -15,7 +15,7 @@ inputstring is a string of the form
 
 `Nof(XdY+Z, AdB+C, K)`
 
-Where N is the number of sets you'd like to make of the given rolls, X is the number of die for a given roll, Y is the number of sides for a given roll, and Z is a modifier on the roll. In this case A, B, and C are the same for another roll, and you can have as many as you like separated by commas. Any whitespace surrounding a given roll string will be ignored, so if it's easier for you to read it that way then go for it.
+Where N is the number of sets you'd like to make of the given rolls, X is the number of die for a given roll, Y is the number of sides for a given roll, and Z is a modifier on the roll. In this case A, B, and C are the same for another roll, and you can have as many as you like separated by commas. K is a static value that will be included in the output. Any whitespace surrounding a given roll string will be ignored, so if it's easier for you to read it that way then go for it.
 
 Example for a single roll of 2d8+3:
 
