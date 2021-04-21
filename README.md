@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/5431371/115607439-9bfb2680-a2aa-11eb-90e3-e2bd07765b28.png)
+
+
 # statparse
 
 I got really bored/tired of rolling all the stat blocks I need for Out of the Abyss, so I made this tool to roll mobs of stats for me at once.
