@@ -1,6 +1,5 @@
 ![image](https://user-images.githubusercontent.com/5431371/115607439-9bfb2680-a2aa-11eb-90e3-e2bd07765b28.png)
 
-
 # statparse
 
 I got really bored/tired of rolling all the stat blocks I need for Out of the Abyss, so I made this tool to roll mobs of stats for me at once.
@@ -40,7 +39,7 @@ Example for 4 rolls of 1d20+4 and 1d8+2:
 
 `statparse "4of(1d20+4, 1d8+2)"`
 
-Statparse also allows you to add static values to the output if you need to (for example, the ac of a monster). In this case you can just subsituted the given roll string for a number like so:
+Statparse also allows you to add static values to the output if you need to (for example, the ac of a monster). In this case you can just substitute the given roll string for a number like so:
 
 `statparse "6of(1d20+3, 14, 1d8+2)"`
 
