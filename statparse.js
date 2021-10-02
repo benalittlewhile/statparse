@@ -6,6 +6,14 @@ if (process.argv.length === 2) {
 }
 
 const inString = process.argv[2];
+let labels = "";
+
+if (process.argv[3]) {
+  labels = process.argv[3].split(",").map((val) => val.trim());
+  labels.map((label) => {
+    console.log(`found label: ${label}`);
+  });
+}
 
 console.log(inString);
 
@@ -22,9 +30,13 @@ if (inString.includes("of")) {
   parses = parsedClean.split(",");
   for (let i = 0; i < multiplier; i++) {
     let ret = "";
+    let pos = 0;
     parses.map((parse) => {
       let parsed = parseSingle(parse);
-      let stackableParsed = parsed + " ";
+      let stackableParsed = labels[pos]
+        ? `${labels[pos]}: ${parsed} `
+        : `${parsed} `;
+      pos += 1;
       ret += stackableParsed;
     });
     console.log(ret);

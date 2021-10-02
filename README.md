@@ -12,7 +12,9 @@ You can either run `node statparse.js` from inside the repo folder, or run `inst
 
 to run:
 
-`statparse "inputstring"`
+`statparse "inputstring" "labels"`
+
+### input string
 
 inputstring is a string of the form
 
@@ -47,3 +49,14 @@ You can take the highest n rolls from a set (4d6 drop lowest, for examples)
 likes this:
 
 `statparse "6of(4d6t3)"`
+
+### Labels
+
+Labels should a comma separated list of strings you want prepended to the
+respective value in the output. For example
+
+`statparse "1of(4d6t3, 4d6t3, 4d6t3)" "str, int, dex"`
+
+might output as
+
+`str: 14 int: 12 dex: 10`
