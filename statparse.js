@@ -36,24 +36,42 @@ if (inString.includes("of")) {
 function parseSingle(parse) {
   let parseString = parse.trim();
   let operator;
+  let top;
+  let output;
 
   if (!parseString.includes("d")) {
     return parseString;
   }
 
+  if (parseString.includes("t")) {
+    [parseString, top] = parseString.split("t");
+  }
+
   if (parseString.includes("+")) {
     [parseString, operator] = parseString.split("+");
   }
+
   let [numberOf, sides] = parseString.split("d");
+
   return !operator
-    ? dieRoll(numberOf, sides)
-    : dieRoll(numberOf, sides) + Number(operator);
+    ? dieRoll(numberOf, sides, top)
+    : dieRoll(numberOf, sides, top) + Number(operator);
 }
 
-function dieRoll(numberOf, sides) {
-  let sum = 0;
+function dieRoll(numberOf, sides, top = 0) {
+  let rolls = [];
   for (let i = 0; i < numberOf; i++) {
-    sum += Math.floor(Math.random() * sides + 1);
+    rolls.push(Math.floor(Math.random() * sides + 1));
   }
-  return sum;
+  // console.log(`allRolls: ${rolls}`);
+  rolls = rolls.sort((a, b) => {
+    return b - a;
+  });
+  if (top > 0) {
+    rolls = rolls.slice(0, top);
+  }
+  // console.log(`rolls: ${rolls}`);
+  return rolls.reduce((prev, cur) => {
+    return prev + cur;
+  });
 }
